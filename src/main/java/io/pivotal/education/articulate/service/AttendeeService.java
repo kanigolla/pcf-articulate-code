@@ -49,13 +49,13 @@ public class AttendeeService {
         if (serviceInfo instanceof WebServiceInfo) {
           WebServiceInfo webServiceInfo = (WebServiceInfo) serviceInfo;
           this.baseUri = webServiceInfo.getUri();
-//          deriveEndpointFromBaseUri();
+          deriveEndpointFromBaseUri();
         }
       }
     } catch (CloudException e) {
       logger.debug("Failed to read cloud environment.  Ignore if running locally.");
     }
-    deriveEndpointFromBaseUri(); // move here otherwise local run will fail with null endpoint
+//    deriveEndpointFromBaseUri(); // move here otherwise local run will fail with null endpoint
     logger.info("attendee-service uri is: {}", this.baseUri);
   }
 
